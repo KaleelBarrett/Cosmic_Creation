@@ -1,0 +1,751 @@
+/* General body styling */
+body {
+    margin: 0; /* Remove default margin */
+    background-color: #C0C0C0;
+    font-family: "Poppins", sans-serif;
+    color: F4F4F9;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Logo styling */
+header nav img {
+    width: auto;
+    height: 30px;
+}
+
+/* Navigation list styling */
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* List items styling */
+header nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    display: inline; /* Ensure flex to align icon and text */
+    align-items: center;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Icon styling */
+nav ul li a i {
+    font-size: 20px; /* Reduced for better mobile fit */
+    margin-right: 8px;
+}
+
+/* Hidden label styling */
+nav ul li a .label {
+    opacity: 0;
+    margin-top: 0px;
+    transition: opacity 0.3s ease, margin-top 0.3s ease;
+    white-space: nowrap;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Center the label */
+    text-align: center;
+    font-size: 14px; /* Slightly smaller for consistency */
+    font-family: "Poppins", sans-serif;
+    color: #4D869C;
+}
+
+/* Show label on hover */
+nav ul li a:hover .label {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Button styling */
+nav button {
+    background-color: #1A1F71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.menu-toggle {
+    display: none; /* Initially hidden */
+}
+
+/* Dropdown menu for smaller screens */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    header nav {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    header .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin: 10px 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+    header .menu.active {
+        display: flex;
+    }
+
+    header .menu li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header .menu a {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    header .menu a i {
+        font-size: 18px; /* Adjusted for visibility */
+    }
+
+    .menu-toggle {
+        display: block; /* Visible in small screens */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 24px; /* Increased size for easier tapping */
+        color: #333;
+    }
+
+    nav ul li a:hover .label {
+        opacity: 0;
+        visibility: hidden; /* Hide label in small screens */
+    }
+
+    nav button, .menu {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+/* Section styling */
+#home {
+    position: relative; /* Ensure relative positioning for absolute elements */
+    width: 100vw;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Adjusted padding for video element */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    text-align: center; /* Center align text */
+}
+
+#bg-video {
+    position: absolute; /* Position video absolutely within #home */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire section */
+    z-index: -1; /* Place video behind other content */
+}
+
+
+
+#home h1 {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #FFD700 ; /* White text color */
+    font-size: 78px;
+}
+
+#home h2{
+    margin-bottom: 10px;
+    font-size: 48px;
+    color: #F4F4F9  ; /* Dark grey color */
+}
+
+#home p {
+    font-size: 20px; /* Increased font size for paragraph */
+    color: #F4F4F9; /* Lighter text color */
+    line-height: 1.8; /* Increased line height for readability */
+    max-width: 600px; /* Limit width of paragraph */
+}
+
+/* Button styling for the #home section */
+#home button {
+    background-color: #1A1F71 ; /* Primary blue background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 15px 30px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2rem; /* Larger font size */
+    font-family: "Poppins", sans-serif; /* Font family for consistency */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-transform: uppercase; /* Uppercase text for emphasis */
+    letter-spacing: 1px; /* Space between letters */
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Button hover effect */
+#home button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for effect */
+}
+
+/* Button focus effect */
+#home button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+}
+
+/* Button active effect */
+#home button:active {
+    transform: scale(0.98); /* Slight shrink effect */
+    background-color: #003f7f; /* Even darker blue when clicked */
+}
+
+@media (max-width: 600px) {
+    #home h1 {
+        font-size: 48px; /* Adjusted font size for smaller screens */
+    }
+    #home h2 {
+        font-size: 32px; /* Adjusted font size for smaller screens */
+    }
+    #home p {
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+    #home button {
+        padding: 12px 24px; /* Adjusted padding for smaller screens */
+        font-size: 1rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Section styling for the #about section */
+#about {
+    padding: 60px 20px; /* Padding for breathing space */
+    text-align: center; /* Center align text and elements */
+    max-width: 1400px; /* Maximum width for content */
+    margin: 40px auto; /* Center the section horizontally and add space above */
+    border-radius: 10px; /* Rounded corners for a modern look */
+}
+
+/* Main container for the about section */
+.about-main {
+    display: flex; /* Flexbox for side-by-side layout */
+    flex-direction: row; /* Default to row direction */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Distribute space between elements */
+    gap: 20px; /* Gap between flex items */
+    padding: 20px; /* Inner padding for better spacing */
+}
+
+/* Styling for main heading */
+#about h1 {
+    font-size: 1.5rem; /* Slightly smaller than main heading */
+    color: #FFD700   ; /* Dark grey color */
+    margin-bottom: 0px; /* Space below the heading */
+    font-family: "Poppins", sans-serif; /* Font family */
+}
+
+/* Styling for subheading */
+#about h2 {
+    margin-top: 0px;
+    font-size: 2.5rem; /* Large font size */   
+    color: #1A1F71 ; /* Primary color for emphasis */
+    margin-bottom: 30px; /* More space below the subheading */
+    font-family: "Poppins", sans-serif; /* Font family */
+    text-transform: uppercase;
+}
+
+/* Image styling */
+#about img {
+    width: 100%; /* Full width image */
+    max-width: 600px; /* Limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Margin above and below the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+}
+
+/* Paragraph styling */
+#about p {
+    font-size: 1.1rem; /* Slightly reduced for better alignment */
+    line-height: 1.75; /* Increased line height for better readability */
+    color: #000000   ; /* Slightly darker grey for better contrast */
+    max-width: 600px; /* Reduced max-width for better line length */
+    margin: 20px auto; /* Center paragraph with top and bottom margins */
+    padding: 0 15px; /* Less padding to prevent excessive spacing */
+    font-family: "Poppins", sans-serif; /* Consistent font family */
+    text-align: justify; /* Justify text for a clean look */
+}
+
+
+/* Button styling */
+#about button {
+    background-color: #1A1F71; /* Primary color for the button */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 15px 30px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    font-family: "Poppins", sans-serif; /* Font family */
+    margin-top: 20px; /* Space above the button */
+    text-transform: uppercase; /* Uppercase text for emphasis */
+}
+
+/* Button hover effect */
+#about button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+@media (max-width: 600px) {
+    /* Flex direction for smaller screens */
+    .about-main {
+        display: flex;
+        flex-direction: column; /* Switch to column layout */
+        align-items: center; /* Center items in column layout */
+    }
+
+    #about h1 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
+
+    #about h2 {
+        font-size: 2rem; /* Adjusted font size for smaller screens */
+    }
+
+    #about img {
+        max-width: 100%; /* Adjusted max-width for smaller screens */
+        margin: 10px 0; /* Reduce margin to fit better */
+    }
+
+    #about p {
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+        line-height: 1.5; /* Reduced line height for compactness */
+        max-width: 100%; /* Make full width for smaller screens */
+        margin: 10px 0; /* Reduce margin to fit better */
+        padding: 0 10px; /* Reduced padding to fit screen better */
+        text-align: left; /* Left align to avoid excessive spacing */
+    }
+
+    #about button {
+        padding: 12px 20px; /* Adjusted padding for smaller screens */
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Section styling for #boader */
+#boader {
+    background-color: #FFD700  ; /* Light blue background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 60px 20px; /* Padding for section */
+}
+
+/* Text section in #boader */
+#boader .text-section {
+    display: flex; /* Flexbox for content layout */
+    flex-direction: column; /* Stack text items vertically */
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+}
+
+/* Main heading in #boader */
+#boader h1 {
+    margin-top: 0;
+    font-size: 2.5rem; /* Large font size */
+    color: #1A1F71 ; /* Primary color */
+    margin-bottom: 0px; /* Space below main heading */
+}
+
+/* Subheading in #boader */
+#boader h2 {
+    margin-bottom: 0;
+    font-size: 1.5rem; /* Smaller than main heading */
+    color: #000000 ; /* Grey color */
+    margin-bottom: 30px; /* Space below subheading */
+}
+
+/* Button section in #boader */
+#boader .button-section {
+    display: flex; /* Flexbox for button layout */
+    justify-content: center; /* Center buttons */
+    gap: 20px; /* Gap between buttons */
+}
+
+/* Button specific styles */
+#boader .butt1, #boader .butt2 {
+    background-color: #1A1F71  ; /* Primary button color */
+    color: white; /* White text */
+    padding: 15px 30px; /* Button padding */
+    font-size: 1rem; /* Button font size */
+}
+
+/* Hover effect for buttons */
+#boader .butt1:hover, #boader .butt2:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 600px) {
+    #boader h1 {
+        font-size: 1.8rem; /* Adjusted font size for smaller screens */
+    }
+    #boader h2 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
+    #boader .butt1, #boader .butt2 {
+        padding: 12px 20px; /* Adjusted padding for smaller screens */
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Section styling for #projects */
+#projects {
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 60px 20px; /* Padding for section */
+    text-align: center; /* Center align text */
+}
+
+/* Main heading in #projects */
+#projects h1 {
+    font-size: 2.5rem; /* Large font size */
+    color: #FFD700  ; /* Primary color */
+    margin: 0; /* Remove all margin */
+}
+
+/* Subheading in #projects */
+#projects h2 {
+    font-size: 1.5rem; /* Smaller than main heading */
+    color: #000000 ; /* Grey color */
+    margin: 0; /* Remove all margin */
+    margin-bottom: 0px; /* Space below subheading for next elements */
+}
+
+
+/* Container for projects */
+#projects .proj-cont {
+    display: flex; /* Flexbox for project layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center projects */
+    gap: 20px; /* Gap between projects */
+}
+
+/* Individual project styling */
+#projects .proj1, #projects .proj2, #projects .proj3 {
+    background-color: #f1f1f1; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding for project */
+    width: 400px; /* Fixed width for project cards */
+    text-align: center; /* Center align text */
+}
+
+/* Image styling in projects */
+#projects img {
+    width: 100%; /* Full width image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below image */
+}
+
+/* Button container in projects */
+#projects .button-container {
+    display: flex; /* Flexbox for button layout */
+    justify-content: space-around; /* Space around buttons */
+}
+
+#projects button a{
+    text-decoration: none;
+    color: #FFD700 ;
+}
+
+/* Project buttons */
+#projects button {
+    background-color: #1A1F71 ; /* Primary button color */
+    color: white; /* White text */
+    padding: 12px 24px; /* Increased padding for better clickability */
+    font-size: 1rem; /* Button font size */
+    border-radius: 8px; /* Slightly more rounded corners for a modern look */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    text-align: center; /* Center the text */
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+
+/* Hover effect for project buttons */
+#projects button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+}
+
+/* Active state for project buttons */
+#projects button:active {
+    background-color: #004085; /* Even darker blue when pressed */
+    transform: translateY(0); /* Reset position */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Original shadow */
+}
+
+/* Focus state for project buttons */
+#projects button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+}
+
+
+/* Icon styling in project buttons */
+#projects .fab {
+    margin-right: 5px; /* Space to the right of icons */
+}
+
+/* #projects section */
+@media (max-width: 600px) {
+    #projects h1 {
+        font-size: 2rem; /* Adjusted font size for smaller screens */
+    }
+    #projects h2 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
+    #projects .proj1, #projects .proj2, #projects .proj3 {
+        width: 100%; /* Full width for project cards on smaller screens */
+        max-width: none; /* Remove max-width for project cards */
+    }
+    #projects button {
+        padding: 12px 20px; /* Adjusted padding for smaller screens */
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Section styling for #Services */
+#Services {
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack heading and services vertically */
+    align-items: center; /* Center align content horizontally */
+    border-radius: 10px; /* Rounded corners */
+    padding: 60px 20px; /* Padding for section */
+    text-align: center; /* Center align text */
+    max-width: 1200px; /* Optional: Constrain width */
+    margin: auto; /* Center section horizontally */
+}
+
+/* Main heading in #Services */
+#Services h1 {
+    margin-top: 0;
+    font-size: 2.5rem; /* Large font size */
+    color: #FFD700 ; /* Primary color */
+    margin-bottom: 40px; /* Space below main heading */
+}
+
+/* Container for services */
+#Services .service-container {
+    display: flex; /* Flexbox for services */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center services within the container */
+    gap: 20px; /* Space between services */
+    width: 100%; /* Full width for container */
+    padding: 0 10px; /* Optional: Reduce padding to make services fit better */
+}
+
+/* Individual service styling */
+#Services .service {
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding for service */
+    max-width: 30%; /* Max width for service cards */
+    text-align: center; /* Center align text */
+    flex: 1; /* Allow flex grow */
+    min-width: 280px; /* Ensure minimum width for responsive layout */
+    margin: 10px; /* Optional: Add margin to create separation */
+}
+
+/* Image styling in services */
+#Services .service img {
+    width: 100px; /* Fixed width for icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below image */
+}
+
+/* Heading in services */
+#Services .service h3 {
+    font-size: 1.5rem; /* Font size for service heading */
+    color: #1A1F71  ; /* Dark grey color */
+    margin-bottom: 10px; /* Space below service heading */
+}
+
+/* Paragraph in services */
+#Services .service p {
+    font-size: 1rem; /* Font size for service paragraph */
+    line-height: 1.6; /* Line height for readability */
+    color: #000000; /* Medium grey color */
+    padding: 0 10px; /* Padding for inner spacing */
+    margin: 0; /* No additional margin */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    #Services h1 {
+        font-size: 2rem; /* Adjusted font size for smaller screens */
+    }
+
+    #Services .service-container {
+        flex-direction: column; /* Stack services vertically */
+        align-items: center; /* Center services in column layout */
+        padding: 0; /* Remove additional padding */
+    }
+
+    #Services .service {
+        max-width: 100%; /* Full width for service cards on smaller screens */
+        min-width: unset; /* Remove minimum width for better fitting */
+        margin: 10px 0; /* Margin for spacing in column layout */
+    }
+
+    #Services .service h3 {
+        font-size: 1.2rem; /* Adjusted font size for smaller screens */
+    }
+
+    #Services .service p {
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+
+    #Services button {
+        padding: 12px 20px; /* Adjusted padding for smaller screens */
+        font-size: 0.9rem; /* Adjusted font size for smaller screens */
+    }
+}
+
+/* Footer styling */
+#footer {
+    background-color: #FFD700 ; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    padding: 40px 20px; /* Padding for spacing */
+    text-align: center; /* Center align text */
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+    font-size: 1rem; /* Base font size */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Space between elements */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center the container */
+    padding-bottom: 20px; /* Bottom padding */
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+    gap: 20px; /* Space between items */
+}
+
+.footer-left, .footer-right {
+    flex: 1; /* Allow to grow and shrink */
+    min-width: 250px; /* Minimum width for responsive layout */
+}
+
+.footer-left h2, .footer-right h2 {
+    font-size: 1.5rem; /* Larger heading */
+    margin-bottom: 15px; /* Space below heading */
+    color: #1A1F71 ;
+}
+
+.footer-left p, .footer-right p {
+    font-size: 1rem; /* Standard paragraph size */
+    margin-bottom: 10px; /* Space between paragraphs */
+}
+
+.footer-left a, .footer-right a {
+    color: #1A1F71 ; /* Blue color for links */
+    text-decoration: underline; /* Underline to distinguish links */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+.footer-left a:hover, .footer-right a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Social icons */
+.social-icons {
+    display: flex; /* Flex layout for icons */
+    justify-content: center; /* Center icons */
+    gap: 15px; /* Space between icons */
+}
+
+.social-icons a {
+    color: #1A1F71 ; /* White icons */
+    font-size: 1.5rem; /* Larger icon size */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Footer bottom text */
+#footer p {
+    font-size: 0.9rem; /* Slightly smaller font */
+    margin-top: 15px; /* Space above */
+    margin-bottom: 0;
+    color: #1A1F71 ;
+}
+
+#footer a {
+    color: #1A1F71 ; /* White text for links */
+    text-decoration: underline; /* Underline for visibility */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+#footer a:hover {
+    color: #007bff; /* Change color on hover */
+}
