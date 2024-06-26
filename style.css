@@ -113,6 +113,7 @@ nav button:hover {
         flex-direction: column;
         padding: 10px;
         height: auto;
+        width: 95vw;
     }
 
     header nav {
